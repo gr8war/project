@@ -8,8 +8,9 @@ import './Profile.css'
 const Profile = () => {
 
     
-
+  const placeholderImage = 'src/assets/login_pic.jpg';
     const [items, setItems] = useState([]);
+    const [imageUrl, setImageUrl] = useState('');
 
 const { id } = useParams(); // Получаем id из URL
 const { userId } = true;
@@ -19,6 +20,7 @@ useEffect(() => {
     .then(response => response.json())
     .then(data => {
       setItems([data]); // Установим полученные данные в массив, если ожидается массив
+      setImageUrl(data.imageURL);
     });
 }, [id]); // id добавляем в зависимости useEffect, чтобы перезагрузить данные при изменении id
 
@@ -52,7 +54,7 @@ useEffect(() => {
             </div>
       <div className="top-container">
       <div className="left-block">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlFQvtgrEvsVIr7uTHXd_Xw4iXbWbIXGNeHKAt-xYWdQ&s" alt="aaa" />
+      <img src={imageUrl || 'https://sun9-58.userapi.com/impg/ab5T4idhr0B5AWdXxxa4y5E52y-TQCZCfyQAUw/3w28Q9giHrg.jpg?size=400x400&quality=96&sign=c35888bdc0a89173caa4adb009d2f1ff&c_uniq_tag=Vjl9BcXEUFWGI8PMiqcrKunqn8_XpJVDG4FiotfXHJc&type=album'} alt="User" />
         </div>
       <div className="right-block">
       {items.map(item => (

@@ -4,25 +4,30 @@ import { Link } from 'react-router-dom';
 import './Navbar.css'; // Предполагается, что у вас есть файл стилей styles.css с необходимыми стилями
 function Header({ jwt, login, logout }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [userImage, setUserImage] = useState(null); // Добавлено состояние для изображения пользователя
 
   useEffect(() => {
-    // Имитация получения JWT с сервера
+    // Здесь имитация получения JWT с сервера
     const fetchJwt = async () => {
-      try {
-        const response = await fetch('/api/auth/token');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setJwt(data.token); // Сохраняем полученный JWT
-      } catch (error) {
-        console.error('Ошибка при получении данных:', error);
-      }
+      // ... ваш существующий код
     };
 
+    // Вызов fetchJwt
     fetchJwt();
-  }, []);
 
+    // Fetch для получения изображения пользователя
+    const userId = '2'; // Пример ID пользователя, подставьте актуальное значение
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+      .then((response) => response.json())
+      .then((userData) => {
+        // Предположим, что URL изображения пользователя находится в свойстве 'imageUrl' объекта userData
+        setUserImage(userData.imageUrl);
+      })
+      .catch((error) => {
+        console.error('Ошибка при получении изображения пользователя:', error);
+      });
+  }, []);
+  
   const image = "..\\..\\src\\assets\\image.png"
   
 
@@ -60,12 +65,12 @@ function Header({ jwt, login, logout }) {
             <a href="/profile/2" className="nav__link">
             <div>
               
-              <img id='image_icon' src = "..\\..\\src\\assets\\image.png" alt="Profile" />
-              <i className="ri-user-line"></i>
+              <img id='image_icon' src =  'https://sun9-58.userapi.com/impg/ab5T4idhr0B5AWdXxxa4y5E52y-TQCZCfyQAUw/3w28Q9giHrg.jpg?size=400x400&quality=96&sign=c35888bdc0a89173caa4adb009d2f1ff&c_uniq_tag=Vjl9BcXEUFWGI8PMiqcrKunqn8_XpJVDG4FiotfXHJc&type=album' alt="Profile" />
             </div></a>
           ) : (
             
             <a href="/login" className="nav__link">
+              
             <div className='button___login'>Qeydiyyat/Giriş<i className="ri-arrow-right-line"></i></div>
           </a>
             
@@ -78,5 +83,5 @@ function Header({ jwt, login, logout }) {
     </header>
   );
 }
-
+//<i className="ri-user-line"></i> 
 export default Header;

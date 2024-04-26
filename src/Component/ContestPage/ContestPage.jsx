@@ -33,7 +33,7 @@ const OyunPage = () => {
           {levels.map((level, index) => (
             <React.Fragment key={level.id}>
               <div className={`level-cell ${level.unlocked && userLoggedIn ? 'unlocked' : 'locked'}`}>
-                <p className='oyun_contain'>{level.name}</p>
+                <p className='oyun_contain'>{level.title}</p>
                 {userLoggedIn ? (
                   level.unlocked ? (
                     <button className='kecit_button'>Keçid Et</button>

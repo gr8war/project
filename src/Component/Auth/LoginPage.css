@@ -50,3 +50,23 @@ input[type="password"] {
 .login-button:hover {
     background-color: #685bcd; /* Изменение цвета при наведении */
   }
+
+  .smt{
+    width: 70%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+  .smt a{
+    color: white;
+  }
+
+  .smt a:hover{
+    color: #685bcd;
+  }
+  .logos_login{
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}

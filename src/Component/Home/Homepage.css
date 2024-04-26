@@ -33,3 +33,7 @@ p{
     
     color: var(--title-color);
 }
+
+.infobox{
+    font-weight:100;
+}

@@ -30,7 +30,7 @@ useEffect(() => {
             ))}</h1>
           </div>
         <div className="spor">
-            <h3>Levels</h3>
+            <h3>Tapşırıqlar</h3>
           </div>
           <div className='algorbox'>
             <div className='koffe'>
@@ -46,7 +46,7 @@ useEffect(() => {
           </div>
         <div className="content middle">
         <div className="spor">
-            <h3>Levels</h3>
+            <h3>Tapşırıqlar</h3>
           </div>
           <div className='algorbox'>
   {items.length > null ? (

@@ -2,11 +2,21 @@ import React, { useState } from 'react';
 
 function EditUserForm() {
   const [email, setEmail] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
   const [userDetails, setUserDetails] = useState({
     name: '',
     surname: '',
     password: ''
   });
+  
+useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`) // Используем id в URL
+      .then(response => response.json())
+      .then(data => {
+        setItems([data]); // Установим полученные данные в массив, если ожидается массив
+        setImageUrl(data.imageURL);
+      });
+  }, [id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

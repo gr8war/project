@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SignUpPage from './Component/Auth/SignUpPage';
 import LoginPage from './Component/Auth/LoginPage';
-import HomePage from './Component/Pages/HomePage';
+import HomePage from './Component/Home/HomePage';
 import VerificationPage from './Component/Auth/VerificationPage';
 import ContestPage from './Component/ContestPage/ContestPage';
 import AlgorithmsList from './Component/AlgoRhythmsPage/AlgoRhythmsPage';
@@ -44,8 +44,8 @@ function App() {
         <Route path="/admin" component={AdminPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/verify" component={VerificationPage} />
-        <Route path="/algor/:id" component={AlgorhythmsLevels} />
-        <Route path="/algor/:title" component={LevelTest} />
+        <Route path="/algor_desk/:id" component={AlgorhythmsLevels} />
+        <Route path="/algor/:id" component={LevelTest} />
         <Route path="/algor" component={AlgorithmsList} />
         <Route path="/discuss" exact  component={IcmaPage} />
         <Route path="/discussion/:id" component={DiscussionPage} />

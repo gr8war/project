@@ -42,11 +42,11 @@ const DiscussionList = () => {
   return (
     <div>
       <div>
-        <label>Search by Title:</label>
+        <label>Axtar:</label>
         <input type="text" value={searchTitle} onChange={handleTitleChange} />
-        <label>Search by Theme:</label>
+        <label>Mövzu axtar:</label>
         <select value={searchTheme} onChange={handleThemeChange}>
-          <option value="">All Themes</option>
+          <option value="">Mövzular</option>
           {themes.map((theme) => (
             <option key={theme} value={theme.toLowerCase()}>{theme}</option>
           ))}
@@ -56,11 +56,12 @@ const DiscussionList = () => {
         {filteredDiscussions.length > 0 ? (
           filteredDiscussions.map((discussion) => (
             <div className='discussion_box' key={discussion.id}>
-              <h3>{discussion.title}</h3>
-              <p>{discussion.theme}</p>
-              <a href={`/discussion/${discussion.id}`}>
-                <button>More Details</button>
-              </a>
+              <div className='top'><h3>{discussion.title}</h3>
+              <p>{discussion.theme}</p></div>
+              <div className='bottom'><a href={`/discussion/${discussion.id}`}>
+                <button>Ətraflı</button>
+              </a></div>
+              
             </div>
           ))
         ) : (

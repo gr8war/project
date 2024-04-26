@@ -46,6 +46,7 @@
 
   .left-block img{
     border-radius: 50%;
+    height: 80%
   }
   .bottom-container {
     display: flex;

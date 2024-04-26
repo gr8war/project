@@ -33,13 +33,15 @@ function VerificationPage() {
     return (
         <div className="verification-container">
             <div className="left-panel">
-                <a href="/" className="nav__logo">
+            <div className='logos_login'>
+            <a href="/" className="nav__logo">
                     <img id='image_icon' src="..\..\src\assets\image.png" alt="succer" />
                     <p>AlgoRhythm</p>
                 </a>
-                <h1>Sign Up Verification</h1>
+            </div>
+                <h1>Qeydiyyatı təstiqlə</h1>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" name="verificationCode" placeholder="Verification Code" value={verificationCode} onChange={handleInputChange} />
+                    <input type="text" name="verificationCode" placeholder="Təstiqləmə kodu" value={verificationCode} onChange={handleInputChange} />
                     <button type="submit">Daxil Ol</button>
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     {!isCodeSent && <button onClick={handleResendCode}>Yenidən Göndər</button>}

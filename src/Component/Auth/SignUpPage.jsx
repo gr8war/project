@@ -34,7 +34,12 @@ function SignUpPage() {
         <div className="signup-container">
             <div className="left-panel">
 
-            <a href="/" className="nav__logo"><img id='image_icon' src="..\..\src\assets\image.png" alt="succer" /><p>AlgoRhythm</p></a>
+            <div className='logos_login'>
+            <a href="/" className="nav__logo">
+                    <img id='image_icon' src="..\..\src\assets\image.png" alt="succer" />
+                    <p>AlgoRhythm</p>
+                </a>
+            </div>
                 <h1>Hesab Yarat</h1>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="fullname" placeholder="Full Name" value={userData.fullname} onChange={handleInputChange} />

@@ -22,7 +22,7 @@ function AlgoRhythmsPage() {
           </div>
           <div className='algorbox'>
             {items.map(item => (
-              <a href={`/algor/${item.id}`} key={item.id}>
+              <a href={`/algor_desk/${item.id}`} key={item.id}>
                 <div className="algoritem">
                   <p>{item.title}</p>
                   <i className="ri-arrow-right-s-fill"></i>

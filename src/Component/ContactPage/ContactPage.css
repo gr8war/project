@@ -10,7 +10,7 @@
   
   .info-section {
     flex: 1;
-    padding: 20px;
+    padding: 30px;
     background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
     margin: 10px;
     border-radius: 8px;
@@ -18,7 +18,7 @@
   
   .info-section p{
     color: white;
-    font-size: 20px;
+    font-size: 30px;
   }
 
 
@@ -28,7 +28,7 @@
     background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
     margin: 10px;
     border-radius: 8px;
-    height: 450px;
+    height: 500px;
 }
   
   form {

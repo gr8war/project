@@ -38,16 +38,16 @@ function ContactPage() {
     <div className="contact-container">
       <div className="info-section">
         <div className="spor">
-            <h1>Contact Me</h1>
+            <h1>Bizimlə əlaqə</h1>
           </div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis rem quia, maxime minus placeat aliquam explicabo voluptas reiciendis harum nostrum omnis culpa hic qui consequatur quis cupiditate minima praesentium corrupti.</p>
+        <p>Layihəmizlə bağlı hər hansı çətinliyi və ya təklifi rahatlıqla bu səhifə vasitəsiylə bizə çatdıra bilərsən. Lazımi məlumatları da daxil etməyi unutma ki ehtiyac olduqda geri əlaqə qura bilək :)</p>
       </div>
       <div className="form-section">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
-            placeholder="Name and surname"
+            placeholder="Ad Soyad"
             value={formData.name}
             onChange={handleChange}
           />
@@ -61,17 +61,17 @@ function ContactPage() {
           <input
             type="text"
             name="phone"
-            placeholder="Phone"
+            placeholder="Əlaqə Nömrəsi"
             value={formData.phone}
             onChange={handleChange}
           />
           <textarea
             name="message"
-            placeholder="Your message"
+            placeholder="Mesajınızı qeyd edin"
             value={formData.message}
             onChange={handleChange}
           ></textarea>
-          <button type="submit" id='send_message'>Send Message</button>
+          <button type="submit" id='send_message'>Göndər</button>
         </form>
       </div>
     </div>

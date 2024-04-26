@@ -43,19 +43,19 @@ function LevelTest() {
         <div>
       
           <form onSubmit={handleSubmit}>
-          <p>Answer:</p>
+          <p>Giriş verilənləri:</p>
             <textarea 
               className='cheese'
               value={code}
               onChange={(e) => setCode(e.target.value)}
-              placeholder="Enter your code here..."
+              placeholder="Kodunu Daxil Edin..."
             />
             <LanguageSelector languages={languages} onChange={handleLanguageChange} />
-            <button type="submit">Send Code</button>
+            <button type="submit">Göndər</button>
           </form>
         </div>
         <div>
-          <p>Answer:</p>
+          <p>Nəticə:</p>
           <code className='bazinga'>{response}</code>
         </div>
       </div>

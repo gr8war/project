@@ -27,24 +27,36 @@
         console.error('Failed to post discussion:', error);
         }
     };
+    const themes = ["Theme 0", "Theme 1", "Theme 2", "Theme 3", "Theme 4"]; // Статический список тем
 
     return (
         <>
-        <button onClick={showModal}>Ask a Question</button>
-        {isVisible && (
-            <div className="login">
-            <form onSubmit={handleSubmit}>
-                <label>Title:</label>
-                <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <label>Theme:</label>
-                <input type="text" name="theme" value={theme} onChange={(e) => setTheme(e.target.value)} />
-                <label>Question:</label>
-                <textarea name="question" value={question} onChange={(e) => setQuestion(e.target.value)}></textarea>
-                <button type="submit">Post Question</button>
-                <button type="button" onClick={hideModal}>Cancel</button>
-            </form>
-            </div>
-        )}
+       <button onClick={showModal}>Mövzu yarat</button>
+      {isVisible && (
+        <div className="login">
+          <form onSubmit={handleSubmit}>
+            <label>Başlıq:</label>
+            <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+            <label>Mövzü:</label>
+            <select 
+              name="theme" 
+              value={theme} 
+              onChange={(e) => setTheme(e.target.value)}
+            >
+              <option value="">Select a theme</option>
+              {themes.map((themeOption) => (
+                <option key={themeOption} value={themeOption.toLowerCase()}>
+                  {themeOption}
+                </option>
+              ))}
+            </select>
+            <label>Məzmun:</label>
+            <textarea name="question" value={question} onChange={(e) => setQuestion(e.target.value)}></textarea>
+            <button type="submit">Yerləşdir</button>
+            <button type="button" onClick={hideModal}>Ləvğ et</button>
+          </form>
+        </div>
+      )}
         </>
     );
     };
