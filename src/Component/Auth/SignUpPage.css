@@ -1,0 +1,115 @@
+.signup-container {
+     background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
+    display: flex;
+    width: 100vw; /* ширина всего экрана */
+    height: 100vh; /* высота всего экрана */
+    overflow: hidden; /* предотвращение прокрутки */
+    align-items: stretch; /* элементы растягиваются на всю высоту контейнера */
+}
+
+.left-panel {
+    
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto; /* для прокрутки только этой панели, если содержимое выходит за пределы */
+}
+
+.left-panel h1{
+    color: white;
+    font-size:50px;
+}
+
+.right-panel {
+    flex: 2; /* правая панель будет больше левой */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-panel img {
+    width: 100%; /* ширина соответствует контейнеру */
+    height: 100%; /* высота соответствует контейнеру */
+    object-fit: cover; /* обеспечивает покрытие всей доступной области без искажения */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%; /* Полная ширина внутри контейнера */
+    
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%; /* Полная ширина кнопки */
+}
+.container_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    padding: 20px;
+    border-radius: 25px; /* Закругленные углы для вашего контейнера */
+    box-sizing: border-box; /* Гарантирует, что padding не добавляет дополнительную ширину */
+  }
+  
+  .signup-button {
+    padding: 15px 60px; /* Большая кнопка */
+    margin-bottom: 10px; /* Отступ снизу */
+    border: none;
+    border-radius: 25px; /* Закругленные углы для кнопки */
+    color: white;
+    background: linear-gradient(145deg, #6a5ac9, #5648ae); /* Градиент для кнопки */
+    cursor: pointer;
+    font-size: 1em; /* Размер шрифта для текста кнопки */
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+  }
+  
+  .signup-button:hover {
+    background: linear-gradient(145deg, #7b6fd1, #685bcd); /* Изменение градиента при наведении */
+  }
+  
+  .login-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-text {
+    color: white;
+    margin-right: 10px; /* Отступ справа от текста */
+  }
+  
+  .login-button {
+    padding: 10px 20px; /* Меньшая кнопка */
+    border: none;
+    border-radius: 20px; /* Закругленные углы для кнопки */
+    color: white;
+    background: #5648ae; /* Цвет фона для меньшей кнопки */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+  }
+  
+  .login-button:hover {
+    background-color: #685bcd; /* Изменение цвета при наведении */
+  }
+  
+
+  .nav__logo{
+    width: 60px;
+    display: flex; /* Расположение элементов внутри дива в одной линии */
+  justify-content: space-between; /* Распределение элементов вдоль оси X */
+  align-items: center; /* Выравнивание элементов по центру по вертикали */
+}
+
+.nav__logo img {
+    margin-right: 10px; /* Отступ справа от изображения */
+  }

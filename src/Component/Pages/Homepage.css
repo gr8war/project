@@ -1,0 +1,35 @@
+.middle{
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+}
+
+.middle h1{
+    color: var(--title-color);
+}
+.infobox{ 
+    margin-top: 20px;
+    background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
+    width: calc(100% - 10px) ;
+    aspect-ratio: 1;
+    border-radius: 35px;   
+    font-size: 120%;
+     display: flex; 
+    justify-content: center; /* Выравнивание по горизонтали */
+    align-items: center; /* Выравнивание по вертикали */
+}
+
+.text{
+    white-space: pre-line;
+}
+
+.mg{
+    margin-top: 80px;
+}
+p{
+    white-space: pre-line;
+}
+.spor{
+    font-size: var(--h2-font-size);
+    
+    color: var(--title-color);
+}

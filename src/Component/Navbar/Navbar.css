@@ -1,0 +1,36 @@
+.button___login{
+    background-color: aliceblue;
+    height: 35px;
+    width: 150px;
+    display: flex;
+    justify-content: center; /* Выравнивание по горизонтали */
+    align-items: center; /* Выравнивание по вертикали */
+    border-radius: 15px;
+    color: var(--text-color);
+    white-space: pre-line;
+
+}
+
+.button___login:hover{
+    background-color: var(--first-color);
+    color: black;
+    transition: 0.4s;
+
+}
+
+#image_icon{
+    border-radius: 35px;    
+    width: 60px;
+    
+}
+
+.nav__logo{
+    width: 60px;
+    display: flex; /* Расположение элементов внутри дива в одной линии */
+  justify-content: space-between; /* Распределение элементов вдоль оси X */
+  align-items: center; /* Выравнивание элементов по центру по вертикали */
+}
+
+.nav__logo img {
+    margin-right: 10px; /* Отступ справа от изображения */
+  }

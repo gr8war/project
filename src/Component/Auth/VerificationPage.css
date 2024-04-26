@@ -1,0 +1,75 @@
+.verification-container {
+    background: linear-gradient(to bottom right, var(--body-color), var(--container-color));
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    align-items: stretch;
+}
+
+.left-panel {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+.left-panel form {
+    width: 100%;
+    max-width: 400px; /* Примерное значение максимальной ширины формы */
+}
+
+.left-panel h1 {
+    color: white;
+    font-size: 50px;
+}
+
+.right-panel {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+input[type="text"] {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 35px;  
+}
+button:hover {
+    background-color: #685bcd; /* Изменение цвета при наведении */
+  }
+
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}
+
+.resend-timer {
+    color: white;
+}
+
+.resend-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+}

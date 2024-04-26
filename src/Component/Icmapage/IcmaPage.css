@@ -1,0 +1,197 @@
+/* App.css or icma-page.css */
+
+/* General styling for the Icma page */
+.icma-page {
+    padding: 20px;
+  }
+  
+  .icma-title {
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+  
+.box h3{
+    font-size: var(--h2-font-size);
+}
+
+  /* Styling for the discussion form and list container */
+  .discussion-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* Discussion form specific styles */
+  .discussion-form {
+    width: 45%;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .discussion-list {
+    width: 45%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+  }
+  
+  /* Buttons and inputs */
+  button, input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Modal specific styles */
+ /* Modal overlay that covers the whole screen */
+.login {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 1050; /* High z-index to ensure it's on top */
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.4s;
+  }
+  
+  /* Modal content box */
+  .login form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Blurring effect for the background content */
+  .blur-background {
+    filter: blur(8px);
+  }
+  
+  
+  /* Form layout inside modal */
+  .login label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .login input, .login textarea {
+    margin-bottom: 10px;
+  }
+  
+  .box{
+    background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
+    width: 330px;
+    margin: 20px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 15px;
+  }
+  .ass{display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;}
+
+    .comment_txt{
+        height: 120px;
+        background-color: var(--second-body-color);
+    }
+
+    h2{
+        margin-top: 10px;
+    }
+    /* Основные стили страницы */
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+.content h1{
+  margin-top: 100px;
+}
+
+.spor {
+    margin-bottom: 20px;
+}
+.discussio_grid {
+margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.discussion_box {
+    padding: 20px;
+    margin: 25px;
+    background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
+    border-radius: 8px;
+    height: 180px;
+    width: calc(30% - 20px) ;
+    border-radius: 15px;   
+    position: relative;
+}
+
+/* Стилизация формы для отправки комментария */
+.comment_txt {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Учитывать padding и border в ширине и высоте */
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для отображения комментариев */
+.comment {
+    margin-top: 20px;
+    padding: 15px;
+    background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
+    border-radius: 4px;
+}
+
+.comment p {
+    margin: 5px 0;
+}
+
+.comment strong {
+    color: #333;
+}
+

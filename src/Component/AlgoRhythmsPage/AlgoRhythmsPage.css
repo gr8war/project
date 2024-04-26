@@ -1,0 +1,45 @@
+.algorbox{
+    width: 100%;
+    background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
+    margin-top: 20px;
+    padding: 20px;
+    
+    border-radius: 15px;
+}
+
+.algoritem {
+    width: 100%; /* Каждый элемент занимает 100% ширины algorbox */
+    margin-bottom: 10px; /* Добавляет небольшой отступ снизу для каждого элемента */
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    color: var(--body-color);
+    display: flex;       /* Включает flexbox */
+  justify-content: space-between; /* Размещает содержимое по краям контейнера */
+  align-items: center; 
+  }
+
+  .algoritem:hover {
+    background-color: var(--container-color);
+    color: white;
+  }
+
+  .algoritem i {
+    /* Если нужно, добавьте сюда стили для иконки */
+    margin-left: auto;  /* Обеспечивает, что все доступное пространство будет слева от <i> */
+    font-size: 24px;    /* Пример установки размера иконки */
+  }
+  .image_algor{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    width: 60%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .koffe{
+    padding: 30px;
+  }
+  .empty-message{
+    color: red;
+  }

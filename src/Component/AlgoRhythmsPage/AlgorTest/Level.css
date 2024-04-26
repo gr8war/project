@@ -1,0 +1,78 @@
+.contact-page {
+    display: flex;
+    margin-top: 100px;
+    padding: 20px;
+    gap: 20px;
+    height: 600px;
+
+  }
+  
+  .left, .right {
+    flex: 1;
+    padding: 30px;
+    background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  .left {
+    margin-right: 10px;
+  }
+  
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cheese {
+    height: 200px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+  }
+  .bazinga{
+    height: 120px;
+  }
+
+  select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  code {
+    display: block;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .oso{
+    margin-top: 20px;
+  }

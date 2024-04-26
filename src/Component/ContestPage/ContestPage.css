@@ -1,0 +1,93 @@
+/* OyunPage.css */
+.oyun-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    margin-top: 100px;
+  }
+  
+  .levels-grid {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .level-cell {
+    width: 150px;
+    padding: 20px;
+    margin: 5px;
+    background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
+    border-radius: 8px;
+    height: 140px;
+    width: calc(30% - 10px) ;
+    border-radius: 15px;   
+    position: relative;
+  }
+  
+  .level-cell.unlocked {
+    background-color: #e4ffe4; /* Светло-зеленый фон для разблокированных уровней */
+  }
+  
+  .level-cell.locked {
+    background-color: #ffe4e4; /* Светло-красный фон для заблокированных уровней */
+  }
+  
+  .level-cell button {
+    padding: 10px 20px;
+    margin-top: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .level-cell button:hover {
+    background-color: #45a049;
+  }
+  
+  .connector {
+    width: 30px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative; /* or absolute, fixed */
+  left: -5px; /* Moves the element 10 pixels to the left */
+    
+  }
+  
+  .connector.green {
+    color: green;
+  }
+  
+  .connector.red {
+    color: red;
+  }
+  
+  .connector.white {
+    color: white;
+  }
+
+
+  .oyun_contain{
+    font-size: var(--h2-font-size);
+    
+    color: var(--title-color);
+  }
+
+  .kecit_button{
+    margin-top: 30px;
+  }
+
+
+  .ri-git-repository-private-fill{
+    position: absolute;
+    top: 2.7rem;
+    right: 2rem;
+    color: var(--title-color);
+    cursor: pointer;
+    font-size: 60px;
+  }
