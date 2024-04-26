@@ -41,10 +41,10 @@ const Profile_change = () => {
         
         axios.post(`https://jsonplaceholder.typicode.com/users/${id}/update`, formData)
             .then(response => {
-                alert('Профиль успешно обновлён!');
+                alert('profile updated successfully!');
             })
             .catch(error => {
-                alert('Ошибка при обновлении профиля!');
+                alert('No profile update!');
             });
     }
 
@@ -57,7 +57,7 @@ const Profile_change = () => {
             <HEADER />
             <div className="content middle">
             <div className="spor">
-            <h1>Change your Profile</h1></div>
+            <h1>Profil Redaktə Et</h1></div>
             <div className='algorbox'>
                 {user && (
                     <form onSubmit={handleSubmit}>
@@ -66,22 +66,22 @@ const Profile_change = () => {
                             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className="form-group">
-                            <label>About:</label>
+                            <label>Haqqında:</label>
                             <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
                         </div>
                         <div className="form-group">
-                            <label>Password:</label>
+                            <label>Şifrə:</label>
                             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                         </div>
                         <div className="form-group">
-                            <label>Confirm Password:</label>
+                            <label>Şifrəni təsdiqlə:</label>
                             <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                         </div>
                         <div className="form-group">
-                            <label>Profile Picture:</label>
+                            <label>Profil Şəkli:</label>
                             <input type="file" accept=".png, .jpg, .jpeg" onChange={handleImageChange} />
                         </div>
-                        <button type="submit">Save Changes</button>
+                        <button type="submit">Yadda saxla</button>
                     </form>
                 )}
             </div>

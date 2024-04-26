@@ -61,7 +61,7 @@ useEffect(() => {
             <div>
             <h2 >Email</h2>
             <p>{item.email}</p>
-            <h2>About</h2>
+            <h2>Haqqında</h2>
             <p>{item.username}</p>
             </div>
              

@@ -22,7 +22,7 @@
     margin: 5px;
     background: linear-gradient(to bottom right, var(--body-color ), var(--container-color));
     border-radius: 8px;
-    height: 140px;
+    height: 200px;
     width: calc(30% - 10px) ;
     border-radius: 15px;   
     position: relative;
@@ -44,6 +44,11 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute; /* Переводим кнопку в абсолютное позиционирование */
+    bottom: 10px; /* Выравниваем относительно нижней границы */
+    left: 50%; /* Располагаем по центру горизонтально */
+    transform: translateX(-50%); /* Сдвигаем кнопку на половину своей ширины влево */
+    width: 80%;
   }
   
   .level-cell button:hover {
@@ -73,6 +78,7 @@
 
 
   .oyun_contain{
+    width: 75%;
     font-size: var(--h2-font-size);
     
     color: var(--title-color);

@@ -33,7 +33,7 @@ const UpoloadAvatar = ({
       if (type === "image/png" || type === "image/jpeg") {
         setFile(files[0]);
       } else {
-        toast.error("Accept only png and jpeg image types are allowed*", {
+        toast.error("Yalnız png və jpeg şəkil növlərini qəbul etməyə icazə verilir*", {
           hideProgressBar: true,
         });
       }
@@ -60,7 +60,7 @@ const UpoloadAvatar = ({
 
   const handleSubmit = async () => {
     if (!file) {
-      toast.error("File is required*", {
+      toast.error("File lazimdir*", {
         hideProgressBar: true,
       });
       return;

@@ -35,8 +35,10 @@ const OyunPage = () => {
               <div className={`level-cell ${level.unlocked && userLoggedIn ? 'unlocked' : 'locked'}`}>
                 <p className='oyun_contain'>{level.title}</p>
                 {userLoggedIn ? (
-                  level.unlocked ? (
-                    <button className='kecit_button'>Keçid Et</button>
+                  level.id ? (
+                    <a href={`/algor/${level.id}`}>
+
+                    <button className='kecit_button'>Keçid Et</button></a>
                   ) : (
                     <i className="ri-git-repository-private-fill"></i>
                   )

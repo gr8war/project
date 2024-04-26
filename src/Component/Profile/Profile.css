@@ -19,6 +19,7 @@
   }
   .ri-edit-2-fill{
     font-size: 30px;
+    color: white;
   }
   .ri-edit-2-fill:hover{
     color: var(--body-color);

@@ -11,7 +11,7 @@ const IcmaPage = () => {
     <div >
         <HEADER/>
         <div class="content middle">
-        <div className='spor'><h1 className="icma-title">ICMA</h1></div>
+        <div className='spor'><h1 className="icma-title">İCMA</h1></div>
       <DiscussionForm />
       <DiscussionList />
     </div>
