@@ -1,61 +1,65 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function EditAlgorithmForm({ algorithmTag }) {
-  const [algorithmData, setAlgorithmData] = useState({
+function EditUserForm({ userId }) {
+  const [userData, setUserData] = useState({
     name: '',
-    description: '',
-    tag: '',
-    rank: 0
+    surname: '',
+    email: '',
+    password: '',
+    about: ''
   });
 
-  // Fetch existing algorithm data
+  // Fetch existing user data
   useEffect(() => {
-    async function fetchAlgorithmData() {
+    async function fetchUserData() {
       try {
-        const response = await axios.get(`https://your-api-url/algorithms/${algorithmTag}`);
-        setAlgorithmData(response.data);
+        const response = await axios.get(`https://your-api-url/users/${userId}`);
+        setUserData(response.data); // Assume the API returns the user data with these fields
       } catch (error) {
-        console.error('Failed to fetch algorithm data:', error);
+        console.error('Failed to fetch user data:', error);
       }
     }
-
-    fetchAlgorithmData();
-  }, [algorithmTag]);
+    
+    fetchUserData();
+  }, [userId]);
 
   const handleChange = (event) => {
-    setAlgorithmData({ ...algorithmData, [event.target.name]: event.target.value });
+    setUserData({ ...userData, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.put(`https://your-api-url/algorithms/${algorithmTag}`, algorithmData);
-      console.log('Algorithm updated:', response.data);
-      alert('Algorithm updated successfully!');
+      const response = await axios.put(`https://your-api-url/users/${userId}`, userData);
+      console.log('User updated:', response.data);
+      alert('User updated successfully!');
     } catch (error) {
-      console.error('Failed to update algorithm:', error);
-      alert('Failed to update algorithm.');
+      console.error('Failed to update user:', error);
+      alert('Failed to update user.');
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>Name:
-        <input type="text" name="name" value={algorithmData.name} onChange={handleChange} />
+        <input type="text" name="name" value={userData.name} onChange={handleChange} />
       </label>
-      <label>Description:
-        <input type="text" name="description" value={algorithmData.description} onChange={handleChange} />
+      <label>Surname:
+        <input type="text" name="surname" value={userData.surname} onChange={handleChange} />
       </label>
-      <label>Tag:
-        <input type="text" name="tag" value={algorithmData.tag} onChange={handleChange} />
+      <label>Email:
+        <input type="email" name="email" value={userData.email} onChange={handleChange} />
       </label>
-      <label>Rank:
-        <input type="number" name="rank" value={algorithmData.rank} onChange={handleChange} />
+      <label>Password:
+        <input type="password" name="password" value={userData.password} onChange={handleChange} />
       </label>
-      <button type="submit">Update Algorithm</button>
+      <label>About:
+        <textarea name="about" value={userData.about} onChange={handleChange} />
+      </label>
+      <button type="submit">Update User</button>
     </form>
   );
 }
 
-export default EditAlgorithmForm;
+export default EditUserForm;

@@ -57,7 +57,7 @@ function EditUserForm({ userId }) {
       <label>About:
         <textarea name="about" value={userData.about} onChange={handleChange} />
       </label>
-      <button type="submit">Update User</button>
+      <button type="submit">Add User</button>
     </form>
   );
 }
