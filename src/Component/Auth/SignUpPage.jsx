@@ -50,7 +50,7 @@ function SignUpPage() {
                     <div class="container_login">
                                 <button class="signup-button">Qeydiyyatdan Keç</button>
                                 <div class="login-section">
-                                 <span class="login-text">Hesabın Var?  </span>
+                                 <span class="login-text"> <a href='/login' className='asa'>Hesabın Var?  </a></span>
                                  <button class="login-button">Daxil Ol</button>
                     </div>
             </div>

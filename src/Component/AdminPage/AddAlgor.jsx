@@ -1,65 +1,45 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function AddAlgorithmForm() {
-  const [algorithmData, setAlgorithmData] = useState({
-    name: '',
-    description: '',
-    tag: '',
-    rank: 0,
+function AddTaskForm() {
+  const [taskData, setTaskData] = useState({
     taskDescription: '',
-    taskChecker: ''  // Код или логика проверки задачи
+    taskChecker: '',
+    algorithmTag: ''
   });
 
   const handleChange = (event) => {
-    setAlgorithmData({ ...algorithmData, [event.target.name]: event.target.value });
+    setTaskData({ ...taskData, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // Подготовка данных алгоритма и задачи
-      const postData = {
-        name: algorithmData.name,
-        description: algorithmData.description,
-        tag: algorithmData.tag,
-        rank: algorithmData.rank,
-        tasks: [{
-          description: algorithmData.taskDescription,
-          checker: algorithmData.taskChecker
-        }]
-      };
-      const response = await axios.post('https://your-api-url/algorithms', postData);
-      console.log('Algorithm added:', response.data);
-      setAlgorithmData({ name: '', description: '', tag: '', rank: 0, taskDescription: '', taskChecker: '' });
+      const response = await axios.post(`https://your-api-url/algorithms/${taskData.algorithmTag}/tasks`, {
+        description: taskData.taskDescription,
+        checker: taskData.taskChecker
+      });
+      console.log('Task added:', response.data);
+      setTaskData({ taskDescription: '', taskChecker: '', algorithmTag: '' });  // Reset form
     } catch (error) {
-      console.error('Failed to add algorithm:', error);
+      console.error('Failed to add task:', error);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Name:
-        <input type="text" name="name" value={algorithmData.name} onChange={handleChange} />
-      </label>
-      <label>Description:
-        <input type="text" name="description" value={algorithmData.description} onChange={handleChange} />
-      </label>
-      <label>Tag:
-        <input type="text" name="tag" value={algorithmData.tag} onChange={handleChange} />
-      </label>
-      <label>Rank:
-        <input type="number" name="rank" value={algorithmData.rank} onChange={handleChange} />
-      </label>
       <label>Task Description:
-        <textarea name="taskDescription" value={algorithmData.taskDescription} onChange={handleChange} />
+        <textarea name="taskDescription" value={taskData.taskDescription} onChange={handleChange} />
       </label>
       <label>Task Checker:
-        <textarea name="taskChecker" value={algorithmData.taskChecker} onChange={handleChange} />
+        <textarea name="taskChecker" value={taskData.taskChecker} onChange={handleChange} />
       </label>
-      <button type="submit">Add Algorithm</button>
+      <label>Algorithm Tag:
+        <input type="text" name="algorithmTag" value={taskData.algorithmTag} onChange={handleChange} />
+      </label>
+      <button type="submit">Add Task</button>
     </form>
   );
 }
 
-export default AddAlgorithmForm;
+export default AddTaskForm;

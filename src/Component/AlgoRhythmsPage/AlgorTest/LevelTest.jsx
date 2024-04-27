@@ -58,26 +58,26 @@ function LevelTest({ id }) { // Verify `id` is being passed correctly.
       <div className="contact-page">
         <div className="left">
           <div className='spor'>
-            <h1>Welcome to AlgoRhythm!</h1>
+            <h1>AlgoRhythm'ə xoş gəlmisiniz!</h1>
             <p className='oso'>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
           </div>
         </div>
         <div className="right">
           <div>
             <form onSubmit={handleSubmit}>
-              <p>Input data:</p>
+              <p>Giriş verilənləri:</p>
               <textarea 
                 className='cheese'
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
-                placeholder="Enter your code..."
+                placeholder="Kodumu daxil edin..."
               />
               <LanguageSelector languages={languages} onChange={handleLanguageChange} />
-              <button type="submit">Submit</button>
+              <button type="submit">Göndər</button>
             </form>
           </div>
           <div>
-            <p>Result:</p>
+            <p>Nəticə:</p>
             <code className='bazinga'>{response}</code>
           </div>
         </div>

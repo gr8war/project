@@ -1,63 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function EditUserForm() {
-  const [email, setEmail] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [userDetails, setUserDetails] = useState({
+function EditAlgorithmForm({ algorithmTag }) {
+  const [algorithmData, setAlgorithmData] = useState({
     name: '',
-    surname: '',
-    password: ''
+    description: '',
+    tag: '',
+    rank: 0
   });
-  
-useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/users/${id}`) // Используем id в URL
-      .then(response => response.json())
-      .then(data => {
-        setItems([data]); // Установим полученные данные в массив, если ожидается массив
-        setImageUrl(data.imageURL);
-      });
-  }, [id]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Logic to submit these details to the backend
-    console.log('User updated:', { email, userDetails });
+  // Fetch existing algorithm data
+  useEffect(() => {
+    async function fetchAlgorithmData() {
+      try {
+        const response = await axios.get(`https://your-api-url/algorithms/${algorithmTag}`);
+        setAlgorithmData(response.data);
+      } catch (error) {
+        console.error('Failed to fetch algorithm data:', error);
+      }
+    }
+
+    fetchAlgorithmData();
+  }, [algorithmTag]);
+
+  const handleChange = (event) => {
+    setAlgorithmData({ ...algorithmData, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.put(`https://your-api-url/algorithms/${algorithmTag}`, algorithmData);
+      console.log('Algorithm updated:', response.data);
+      alert('Algorithm updated successfully!');
+    } catch (error) {
+      console.error('Failed to update algorithm:', error);
+      alert('Failed to update algorithm.');
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Edit User</h2>
-      <label>Email:</label>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <label>Name:</label>
-      <input
-        type="text"
-        value={userDetails.name}
-        onChange={(e) => setUserDetails({...userDetails, name: e.target.value})}
-        required
-      />
-      <label>Surname:</label>
-      <input
-        type="text"
-        value={userDetails.surname}
-        onChange={(e) => setUserDetails({...userDetails, surname: e.target.value})}
-        required
-      />
-      <label>Password:</label>
-      <input
-        type="password"
-        value={userDetails.password}
-        onChange={(e) => setUserDetails({...userDetails, password: e.target.value})}
-        required
-      />
-      <button type="submit">Update User</button>
+      <label>Name:
+        <input type="text" name="name" value={algorithmData.name} onChange={handleChange} />
+      </label>
+      <label>Description:
+        <input type="text" name="description" value={algorithmData.description} onChange={handleChange} />
+      </label>
+      <label>Tag:
+        <input type="text" name="tag" value={algorithmData.tag} onChange={handleChange} />
+      </label>
+      <label>Rank:
+        <input type="number" name="rank" value={algorithmData.rank} onChange={handleChange} />
+      </label>
+      <button type="submit">Update Algorithm</button>
     </form>
   );
 }
 
-export default EditUserForm;
+export default EditAlgorithmForm;

@@ -8,7 +8,8 @@ import { TabTitle } from '../../Title.jsx';
 
 const Profile_change = () => {
     const [user, setUser] = useState(null);
-    const [email, setEmail] = useState('');
+    const [ad, setName] = useState('');
+    const [soyad, setSurname] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -19,8 +20,8 @@ const Profile_change = () => {
         axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
             .then(response => {
                 setUser(response.data);
-                setEmail(response.data.email);
-                setUsername(response.data.username);
+                setName(response.data.name);
+                setSurname(response.data.surname);
             });
     }, [id]);
 
@@ -44,7 +45,8 @@ const Profile_change = () => {
         }
 
         const formData = new FormData();
-        formData.append('email', email);
+        formData.append('ad', ad);
+        formData.append('soyad', soyad);
         formData.append('username', username);
         formData.append('password', password);
         formData.append('image', image);
@@ -72,8 +74,12 @@ const Profile_change = () => {
                 {user && (
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label>Email:</label>
-                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <label>Ad:</label>
+                            <input type="text" value={ad} onChange={(e) => setName(e.target.value)} />
+                        </div>
+                        <div className="form-group">
+                            <label>Soyad:</label>
+                            <input type="text" value={soyad} onChange={(e) => setSurname(e.target.value)} />
                         </div>
                         <div className="form-group">
                             <label>Haqqında:</label>

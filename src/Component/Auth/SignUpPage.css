@@ -111,3 +111,14 @@ button {
 .nav__logo img {
     margin-right: 10px; /* Отступ справа от изображения */
   }
+
+  .smt a {
+    color: white;
+}
+
+a:hover {
+  color:#5648ae ;
+}
+a {
+    text-decoration: none;
+}

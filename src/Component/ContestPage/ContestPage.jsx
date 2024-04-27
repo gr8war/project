@@ -28,7 +28,8 @@ const OyunPage = () => {
       <div className="oyun-container">
         <div className='spor'>
           <h1>Oyun</h1>
-          <p>Keçid Etmək üçün giriş edin!</p>
+          {!userLoggedIn && <p>Keçid Etmək üçün giriş edin!</p>}
+          
         </div>
         <div className="levels-grid">
           {levels.map((level, index) => (
@@ -37,7 +38,7 @@ const OyunPage = () => {
                 <p className='oyun_contain'>{level.title}</p>
                 {userLoggedIn ? (
                   level.id ? (
-                    <a href={`/algor/${level.id}`}>
+                    <a href={`/algor_desk/${level.id}`}>
 
                     <button className='kecit_button'>Keçid Et</button></a>
                   ) : (
