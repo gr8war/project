@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import './Navbar.css'; // Предполагается, что у вас есть файл стилей styles.css с необходимыми стилями
-function Header({ jwt, login, logout }) {
+function Header({    }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [userImage, setUserImage] = useState(null); // Добавлено состояние для изображения пользователя
-
   useEffect(() => {
-    // Здесь имитация получения JWT с сервера
-    const fetchJwt = async () => {
-      // ... ваш существующий код
-    };
-
-    // Вызов fetchJwt
-    fetchJwt();
+   
 
     // Fetch для получения изображения пользователя
     const userId = '2'; // Пример ID пользователя, подставьте актуальное значение

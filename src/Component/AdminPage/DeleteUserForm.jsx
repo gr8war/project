@@ -33,10 +33,10 @@ function DeleteUserForm() {
         type="email"
         value={email}
         onChange={handleChange}
-        placeholder="Электронная почта"
+        placeholder="mail"
         required
       />
-      <button type="submit">Удалить пользователя</button>
+      <button type="submit">Delete user</button>
     </form>
   );
 }

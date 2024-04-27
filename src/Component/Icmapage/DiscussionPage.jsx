@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Comment from './Comment'; // Ensure this path is correct
 import HEADER from '../Navbar/navbar.jsx'; // Ensure this path is correct
+import { TabTitle } from '../../Title.jsx';
 
 const DiscussionPage = () => {
   const { id } = useParams();
@@ -34,6 +35,16 @@ const DiscussionPage = () => {
       return comment;
     });
   };
+
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`) // Используем id в URL
+      .then(response => response.json())
+      .then(data => {
+        TabTitle(data.title); 
+      });
+  }, [id]);
+
 
   const addComment = (parentId, text) => {
     if (!text.trim()) return; // Avoid adding empty comments

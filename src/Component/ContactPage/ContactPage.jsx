@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ContactPage.css'; // Make sure to create this CSS file
-
+import { TabTitle } from '../../Title.jsx';
 import Header from '../Navbar/navbar.jsx';
 
 function ContactPage() {
@@ -31,6 +31,7 @@ function ContactPage() {
         message: ''
       });
   };
+  TabTitle('Əlaqə')
 
   return (
     <div>

@@ -1,8 +1,10 @@
 import React from 'react';
 import './Homepage.css';
 import HEADER from '../Navbar/navbar.jsx';
+import { TabTitle } from '../../Title.jsx';
 
 function HomePage() {
+  TabTitle('Home'); 
   return (
     <div>
       <HEADER/>

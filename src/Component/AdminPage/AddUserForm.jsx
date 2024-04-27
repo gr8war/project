@@ -35,7 +35,7 @@ function AddUserForm() {
         name="name"
         value={userData.name}
         onChange={handleChange}
-        placeholder="Имя"
+        placeholder="Name"
         required
       />
       <input
@@ -43,7 +43,7 @@ function AddUserForm() {
         name="surname"
         value={userData.surname}
         onChange={handleChange}
-        placeholder="Фамилия"
+        placeholder="Surname"
         required
       />
       <input
@@ -51,7 +51,7 @@ function AddUserForm() {
         name="email"
         value={userData.email}
         onChange={handleChange}
-        placeholder="Электронная почта"
+        placeholder="mail"
         required
       />
       <input
@@ -59,10 +59,10 @@ function AddUserForm() {
         name="password"
         value={userData.password}
         onChange={handleChange}
-        placeholder="Пароль"
+        placeholder="password"
         required
       />
-      <button type="submit">Добавить пользователя</button>
+      <button type="submit">add new user</button>
     </form>
   );
 }

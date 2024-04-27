@@ -4,6 +4,7 @@ import HEADER from '../../Navbar/navbar.jsx';
 
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { TabTitle } from '../../../Title.jsx';
 
 
 function AlgorhythmsLevels() {
@@ -15,10 +16,12 @@ useEffect(() => {
   fetch(`https://jsonplaceholder.typicode.com/posts/${id}`) // Используем id в URL
     .then(response => response.json())
     .then(data => {
-      setItems([data]); // Установим полученные данные в массив, если ожидается массив
+      setItems([data]);
+      TabTitle(data.title) ; // Установим полученные данные в массив, если ожидается массив
     });
 }, [id]); // id добавляем в зависимости useEffect, чтобы перезагрузить данные при изменении id
-  return (
+
+return (
     <div>
         <HEADER/>
         <div>
@@ -49,7 +52,7 @@ useEffect(() => {
             <h3>Tapşırıqlar</h3>
           </div>
           <div className='algorbox'>
-  {items.length > null ? (
+  {items.length >   0 ? (
     items.map(item => (
       <a href={`/algor/${item.id}`} key={item.id}>
         <div className="algoritem">
@@ -60,7 +63,7 @@ useEffect(() => {
     ))
   ) : (
     <div className="empty-message">
-      <p>Sorry you don't have access for this</p>
+      <p>Bu şərtlər altında Tapşırıqlar aktual deyil</p>
     </div>
   )}
 </div>

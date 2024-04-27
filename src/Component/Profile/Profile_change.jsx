@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import HEADER from '../Navbar/navbar.jsx';
 import './Profile.css'
+import { TabTitle } from '../../Title.jsx';
+
 
 const Profile_change = () => {
     const [user, setUser] = useState(null);
@@ -21,6 +23,14 @@ const Profile_change = () => {
                 setUsername(response.data.username);
             });
     }, [id]);
+
+    useEffect(() => {
+        fetch(`https://jsonplaceholder.typicode.com/users/${id}`) // Используем id в URL
+          .then(response => response.json())
+          .then(data => {
+            TabTitle(data.name); 
+          });
+      }, [id]);
 
     const handleSubmit = (e) => {
         e.preventDefault();

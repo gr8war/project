@@ -17,10 +17,13 @@
     display: flex;
     justify-content: right;
   }
+  .ri-logout-box-r-fill,
   .ri-edit-2-fill{
     font-size: 30px;
     color: white;
+    margin-left: 10px;
   }
+  .ri-logout-box-r-fill:hover,
   .ri-edit-2-fill:hover{
     color: var(--body-color);
   }
@@ -67,3 +70,6 @@
   display: flex; /* Enable flexbox layout */
   }
   
+  .icon-container{
+    
+  }

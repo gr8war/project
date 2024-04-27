@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../Navbar/navbar.jsx';
 import './AlgoRhythmsPage.css';
+import { TabTitle } from '../../Title.jsx';
 
 function AlgoRhythmsPage() {
   const [items, setItems] = useState([]);
@@ -11,7 +12,7 @@ function AlgoRhythmsPage() {
       .then(data => setItems(data))
       .catch(error => console.error('Ошибка загрузки данных:', error));
   }, []);
-
+  TabTitle('Tədris Programı')
   return (
     <div>
       <Header />

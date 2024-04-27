@@ -3,9 +3,10 @@ import DiscussionForm from './DiscussionForm';
 import DiscussionList from './DiscussionList';
 import HEADER from '../Navbar/navbar.jsx';
 import './IcmaPage.css';
+import { TabTitle } from '../../Title.jsx';
 
 const IcmaPage = () => {
-  
+  TabTitle('İCMA'); 
 
   return (
     <div >

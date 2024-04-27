@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ContestPage.css';
 import HEADER from '../Navbar/navbar.jsx';
+import { TabTitle } from '../../Title.jsx';
 
 const OyunPage = () => {
   const [levels, setLevels] = useState([]);
@@ -20,7 +21,7 @@ const OyunPage = () => {
     if (!userLoggedIn) return 'white';
     return left.unlocked && right.unlocked ? 'green' : 'red';
   };
-
+  TabTitle('Oyun')
   return (
     <div>
       <HEADER/>
