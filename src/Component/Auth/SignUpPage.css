@@ -35,13 +35,12 @@
     object-fit: cover; /* обеспечивает покрытие всей доступной области без искажения */
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+.time_in_a_bottle{
     margin: 0;
-    padding: 10px;
+    padding: 5px;
     width: 100%; /* Полная ширина внутри контейнера */
     border-radius: 5px;
+    height: 40px;
     
 }
 

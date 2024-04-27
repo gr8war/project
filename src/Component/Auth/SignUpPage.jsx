@@ -42,10 +42,11 @@ function SignUpPage() {
             </div>
                 <h1>Hesab Yarat</h1>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" name="fullname" placeholder="Full Name" value={userData.fullname} onChange={handleInputChange} />
-                    <input type="email" name="email" placeholder="Email" value={userData.email} onChange={handleInputChange} />
-                    <input type={passwordVisible ? 'text' : 'password'} name="password" placeholder="Password" value={userData.password} onChange={handleInputChange} />
-                    <button type="button" onClick={togglePasswordVisibility}>{passwordVisible ? 'Hide' : 'Show'} Password</button>
+                    <input className='time_in_a_bottle' type="text" name="Ad" placeholder="Ad" value={userData.name} onChange={handleInputChange} />
+                    <input  className='time_in_a_bottle'type="text" name="Soyad" placeholder="Soyad" value={userData.surname} onChange={handleInputChange} />
+                    <input className='time_in_a_bottle' type="email" name="email" placeholder="Email" value={userData.email} onChange={handleInputChange} />
+                    <input className='time_in_a_bottle' type={passwordVisible ? 'text' : 'password'} name="password" placeholder="Şifrə" value={userData.password} onChange={handleInputChange} />
+                    <button type="button" onClick={togglePasswordVisibility}>Şifrəni {passwordVisible ? 'Gizlə' : 'Göstər'} </button>
                     <div class="container_login">
                                 <button class="signup-button">Qeydiyyatdan Keç</button>
                                 <div class="login-section">

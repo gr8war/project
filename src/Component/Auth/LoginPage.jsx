@@ -33,8 +33,8 @@ function LoginPage() {
                     <button type="submit" className='login-button'>Daxil Ol</button>
                 </form>
                 <div className='smt'>
-                    <a href="/verify">Şifrəni unutmusan?</a>
-                    <a href="/sign_up">Yenilə</a>
+                    <a href="/sign_up">Qeydiyyatdan keç</a>
+                    <a href="/verify_mail">Şifrəni Yenilə</a>
                 </div>
             </div>
             <div className="right-panel">
