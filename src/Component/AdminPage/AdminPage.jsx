@@ -1,11 +1,15 @@
 import React from 'react';
-import AddUserForm from './AddUserForm.jsx';
-import DeleteUserForm from './DeleteUserForm.jsx';
-import EditUserForm from './EditUserForm.jsx';
-import AddAlgorithmForm from './AddAlgor.jsx';
-import EditTaskForm from './EditTaskForm.jsx';
-import DeleteTaskForm from './DeleteTaskForm.jsx';
+import AddUserForm from './Userthing/AddUserForm.jsx';
+import DeleteUserForm from './Userthing/DeleteUserForm.jsx';
+import EditUserForm from './Userthing/EditUserForm.jsx';
+import AddAlgorithmForm from './AlgotThing/AddAlgor.jsx';
+import EditTaskForm from './TaskThing/EditTaskForm.jsx';
+import DeleteTaskForm from './TaskThing/DeleteTaskForm.jsx';
+import AddTaskToAlgorithm from './TaskThing/AddTask.jsx';
+import DeleteDiscussionTopicForm from './other/deletediscussion.jsx';
+
 import HEADER from '../Navbar/navbar.jsx';
+import EditAlgorithmDescription from './AlgotThing/EditAlgor.jsx';
 import './AdminPage.css';
 import { TabTitle } from '../../Title.jsx';
 function AdminPage() {
@@ -18,10 +22,12 @@ function AdminPage() {
       <EditUserForm />
       <DeleteUserForm/>
       <AddAlgorithmForm />
+      <EditAlgorithmDescription/>
+
+      <AddTaskToAlgorithm/>
       <EditTaskForm/>
       <DeleteTaskForm/>
-      
-      
+      <DeleteDiscussionTopicForm/>
     </div>
   );
 }
