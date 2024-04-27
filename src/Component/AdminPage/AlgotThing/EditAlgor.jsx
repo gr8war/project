@@ -63,7 +63,7 @@ function EditAlgorithm({ algorithmTag }) {
             <input type="number" name="rank" value={algorithmData.rank} onChange={handleChange} />
           </label>
           <label>Tag:
-            <input type="text" name="tag" value={algorithmData.tag} onChange={handleChange} disabled />
+            <input type="text" name="tag" value={algorithmData.tag} onChange={handleChange}  />
           </label>
           <button type="submit">Update Algorithm</button>
         </>
