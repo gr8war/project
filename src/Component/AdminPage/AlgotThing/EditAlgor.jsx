@@ -1,65 +1,75 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function EditAlgorithmDescription() {
-  const [tag, setTag] = useState('');
-  const [description, setDescription] = useState('');
-  const [loading, setLoading] = useState(false);
+function EditAlgorithm({ algorithmTag }) {
+  const [algorithmData, setAlgorithmData] = useState({
+    name: '',
+    description: '',
+    rank: 0,
+    tag: algorithmTag  // Assuming tag is passed to the component for fetching the specific algorithm
+  });
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Fetch algorithm description when tag is provided
+  // Fetch algorithm data when tag is provided or changed
   useEffect(() => {
-    if (tag !== '') {
-      setLoading(true);
-      axios.get(`https://your-api-url/algorithms/${tag}`)
+    if (algorithmTag) {
+      setIsLoading(true);
+      axios.get(`https://your-api-url/algorithms/${algorithmTag}`)
         .then(response => {
-          setDescription(response.data.description);
+          setAlgorithmData({
+            name: response.data.name,
+            description: response.data.description,
+            rank: response.data.rank,
+            tag: response.data.tag
+          });
           setError('');
         })
         .catch(error => {
-          setError('Algorithm not found or error fetching algorithm.');
-          setDescription('');
+          setError('Failed to fetch algorithm data. Please check the tag and try again.');
+          console.error('Fetch error:', error);
         })
-        .finally(() => setLoading(false));
+        .finally(() => setIsLoading(false));
     }
-  }, [tag]);
+  }, [algorithmTag]);
 
-  const handleTagChange = (event) => {
-    setTag(event.target.value);
-  };
-
-  const handleDescriptionChange = (event) => {
-    setDescription(event.target.value);
+  const handleChange = (event) => {
+    setAlgorithmData({ ...algorithmData, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (tag && description) {
-      try {
-        await axios.put(`https://your-api-url/algorithms/${tag}`, { description });
-        alert('Algorithm description updated successfully!');
-      } catch (error) {
-        alert('Failed to update algorithm description.');
-        console.error('Error updating algorithm:', error);
-      }
-    } else {
-      alert('Please provide both tag and description.');
+    try {
+      const response = await axios.put(`https://your-api-url/algorithms/${algorithmTag}`, algorithmData);
+      alert('Algorithm updated successfully!');
+    } catch (error) {
+      console.error('Error updating algorithm:', error);
+      alert('Failed to update algorithm.');
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Algorithm Tag:
-        <input type="text" value={tag} onChange={handleTagChange} />
-      </label>
-      <label>New Description:
-        <textarea value={description} onChange={handleDescriptionChange} />
-      </label>
-      <button type="submit">Update Description</button>
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
+      {isLoading ? <p>Loading...</p> : (
+        <>
+          <label>Name:
+            <input type="text" name="name" value={algorithmData.name} onChange={handleChange} />
+          </label>
+          <label>Description:
+            <textarea name="description" value={algorithmData.description} onChange={handleChange} />
+          </label>
+          <label>Rank:
+            <input type="number" name="rank" value={algorithmData.rank} onChange={handleChange} />
+          </label>
+          <label>Tag:
+            <input type="text" name="tag" value={algorithmData.tag} onChange={handleChange} disabled />
+          </label>
+          <button type="submit">Update Algorithm</button>
+        </>
+      )}
     </form>
   );
 }
 
-export default EditAlgorithmDescription;
+export default EditAlgorithm;

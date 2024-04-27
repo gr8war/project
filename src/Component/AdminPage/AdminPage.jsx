@@ -9,7 +9,7 @@ import AddTaskToAlgorithm from './TaskThing/AddTask.jsx';
 import DeleteDiscussionTopicForm from './other/deletediscussion.jsx';
 
 import HEADER from '../Navbar/navbar.jsx';
-import EditAlgorithmDescription from './AlgotThing/EditAlgor.jsx';
+import EditAlgorithm from './AlgotThing/EditAlgor.jsx';
 import './AdminPage.css';
 import { TabTitle } from '../../Title.jsx';
 function AdminPage() {
@@ -22,7 +22,7 @@ function AdminPage() {
       <EditUserForm />
       <DeleteUserForm/>
       <AddAlgorithmForm />
-      <EditAlgorithmDescription/>
+      <EditAlgorithm/>
 
       <AddTaskToAlgorithm/>
       <EditTaskForm/>
